@@ -13,8 +13,9 @@ struct Cast {
     let name: String
     let profilePath: String
     var profileImageURL: URL {
-        return URL(string: baseImageURL + profilePath)!
+        return URL(string: "https://image.tmdb.org/t/p/w500\(profilePath)")!
     }
+    
 }
 
 extension Cast: Codable {

@@ -42,7 +42,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         fetchCastData(movieID: movie!.id){ result  in
             DispatchQueue.main.async {
                 self.castResult = result
-                self.casts = result.person
+                self.casts = result.cast
                 self.castCollectionView.reloadData()
             }
         }
@@ -57,7 +57,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: castCollectionCellIdentifier, for: indexPath) as! CastCollectionViewCell
         let cast = casts[indexPath.row]
-        
+
         cell.nameLabel.text = cast.name
         
         

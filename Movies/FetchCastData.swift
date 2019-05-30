@@ -24,6 +24,7 @@ func fetchCastData(movieID: Int, completion: @escaping (CastResult)->()) {
     
     
     let url = URL(string: ( newbase + movieID + something + apiKey))
+
     print("fetchCastData -> baseImageURL:  \(url!)")
     let request = NSMutableURLRequest(url: url! ,
                                       cachePolicy: .useProtocolCachePolicy,
@@ -46,6 +47,7 @@ func fetchCastData(movieID: Int, completion: @escaping (CastResult)->()) {
                 let decoder = JSONDecoder()
                 let responseDictionary = try decoder.decode(CastResult.self, from: data)
                 completion(responseDictionary)
+                
             }
                 
             catch(let err)

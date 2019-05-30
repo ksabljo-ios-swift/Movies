@@ -10,13 +10,13 @@ import Foundation
 
 struct CastResult {
     let id: Int
-    let person: [Cast]
+    let cast: [Cast]
     
 }
 
 extension CastResult: Codable {
     enum CodingKeys: String, CodingKey {
         case id
-        case person = "name"
+        case cast = "cast"
     }
 }
